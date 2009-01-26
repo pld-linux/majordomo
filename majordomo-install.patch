@@ -1,0 +1,13 @@
+--- majordomo-1.94.5/install.sh~	2009-01-26 13:22:14.000000000 +0100
++++ majordomo-1.94.5/install.sh	2009-01-26 13:22:00.000000000 +0100
+@@ -185,6 +185,10 @@
+     exit 1
+ fi
+ 
++CHOWNIT=false
++CHGROUPIT=false
++CHMODIT=false
++
+ ##  Making a directory?
+ if [ X"$1" = X. ] ; then
+     DEST="$2"
