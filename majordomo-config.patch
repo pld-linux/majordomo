@@ -1,0 +1,40 @@
+--- majordomo-1.94.5/sample.cf~	1997-08-27 17:00:31.000000000 +0200
++++ majordomo-1.94.5/sample.cf	2009-01-26 11:38:30.000000000 +0100
+@@ -10,20 +10,16 @@
+ 
+ # $whoami -- Who do users send requests to me as?
+ #
+-$whoami = "Majordomo\@$whereami";
++$whoami = "majordomo\@$whereami";
+ 
+ # $whoami_owner -- Who is the owner of the above, in case of problems?
+ #
+-$whoami_owner = "Majordomo-Owner\@$whereami";
++$whoami_owner = "majordomo-Owner\@$whereami";
+ 
+ # $homedir -- Where can I find my extra .pl files, like majordomo.pl?
+ # the environment variable HOME is set by the wrapper
+ #
+-if ( defined $ENV{"HOME"}) {
+-     $homedir = $ENV{"HOME"};
+-} else {
+-     $homedir = "/usr/test/majordomo";
+-}
++$homedir = "/usr/share/majordomo";
+ 
+ # $listdir -- Where are the mailing lists?
+ #
+@@ -35,11 +31,11 @@
+ # 	/usr/local/mail/digest/bblisa
+ # as its directory.
+ #
+-$digest_work_dir = "/usr/local/mail/digest";
++$digest_work_dir = "/usr/share/majordomo/digest";
+ 
+ # $log -- Where do I write my log?
+ #
+-$log = "$homedir/Log";
++$log = "/var/log/majordomo";
+ 
+ # $sendmail_command -- Pathname to the sendmail program
+ #                      usually /usr/lib/sendmail, but some newer BSD systems
