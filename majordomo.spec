@@ -7,8 +7,8 @@
 #	- set $whereami variable to machine's hostname
 #	- fix %postun error
 #
+%include	/usr/lib/rpm/macros.perl
 Summary:	An Internet mailing list manager
-Summary(pl.UTF-8):	-
 Name:		majordomo
 Version:	1.94.5
 Release:	0.1
@@ -21,7 +21,7 @@ Patch1:		%{name}-wrapper.patch
 Patch2:		%{name}-install.patch
 Patch3:		%{name}-Makefile.patch
 URL:		http://www.greatcircle.com/majordomo/
-Requires:	perl >= 1:5.0
+Requires:	perl-base >= 1:5.0
 Provides:	group(majordomo)
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
 
@@ -31,8 +31,6 @@ mailing lists. Commands are sent to Majordomo via electronic mail to
 handle all aspects of list maintainance. Once a list is set up
 virtually all operations can be performed remotely, requiring no
 intervention by the postmaster of the list site.
-
-%description -l pl.UTF-8
 
 %prep
 %setup -q
@@ -68,8 +66,8 @@ rm -rf $RPM_BUILD_ROOT
 
 %pre
 # how we choose proper GID and UID?
-%groupadd -g 222 %{name}
-%useradd -u 222 -d /var/lib/%{name} -g %{name} -c "Majordomo User" %{name}
+%groupadd -g 235 %{name}
+%useradd -u 235 -d /var/lib/%{name} -g %{name} -c "Majordomo User" %{name}
 
 %postun
 if [ "$1" = "0" ]; then
