@@ -1,0 +1,22 @@
+--- majordomo-1.94.5/wrapper.c~	2009-01-26 12:46:11.000000000 +0100
++++ majordomo-1.94.5/wrapper.c	2009-01-26 12:45:54.000000000 +0100
+@@ -124,17 +124,8 @@
+ #endif
+ 	  
+ 
+-#ifdef POSIX_GID
+-    setgid(POSIX_GID);
+-#else
+-    setgid(getegid());
+-#endif
+-
+-#ifdef POSIX_UID
+-    setuid(POSIX_UID);
+-#else
+-    setuid(geteuid());
+-#endif
++setgid(getegid());
++setuid(geteuid());
+ 
+     if ((getuid() != geteuid()) || (getgid() != getegid())) {
+ 	fprintf(stderr, "%s: error: Not running with proper UID and GID.\n", argv[0]);
