@@ -1,0 +1,15 @@
+--- majordomo-1.94.5/Makefile~	2009-01-26 13:27:06.000000000 +0100
++++ majordomo-1.94.5/Makefile	2009-01-26 13:26:51.000000000 +0100
+@@ -20,10 +20,10 @@
+  
+ # Where do you want Majordomo to be installed?  This CANNOT be the
+ # current directory (where you unpacked the distribution)
+-W_HOME = /usr/test/majordomo-$(VERSION)
++W_HOME = $(DESTDIR)/usr/share/majordomo
+  
+ # Where do you want man pages to be installed?
+-MAN = $(W_HOME)/man
++MAN = $(DESTDIR)/usr/share/man
+  
+ # You need to have or create a user and group which majordomo will run as.
+ # Enter the numeric UID and GID (not their names!) here:
