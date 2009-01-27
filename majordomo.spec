@@ -2,13 +2,13 @@
 # TODO:	- package rest of the files
 #	- set attributes
 #	- some files must go to /usr/bin instead of /usr/share/majordomo
-#	- pl desc
 #	- try to automate aliases creation in /etc/mail/aliases
 #	- set $whereami variable to machine's hostname
 #	- fix %postun error
 #
 %include	/usr/lib/rpm/macros.perl
 Summary:	An Internet mailing list manager
+Summary(pl.UTF-8):	Internetowa lista dyskusyjna
 Name:		majordomo
 Version:	1.94.5
 Release:	0.1
@@ -31,6 +31,14 @@ mailing lists. Commands are sent to Majordomo via electronic mail to
 handle all aspects of list maintainance. Once a list is set up
 virtually all operations can be performed remotely, requiring no
 intervention by the postmaster of the list site.
+
+%description -l pl.UTF-8
+Majordomo jest aplikacją, która automatyzuje zarządzanie
+internetowymi listami dyskusyjnymi. Polecenia mające na celu
+zarządzenie listami są wysyłane do Majordomo poprzez pocztę
+elektroniczną. Od momentu uaktywnienia listy, wszystkie operacje na
+niej się odbywające mogą być wykonywane zdalnie, bez konieczności
+interwencji administratora poczty.
 
 %prep
 %setup -q
@@ -65,7 +73,6 @@ install -d $RPM_BUILD_ROOT{%{_datadir}/%{name},%{_mandir}}
 rm -rf $RPM_BUILD_ROOT
 
 %pre
-# how we choose proper GID and UID?
 %groupadd -g 235 %{name}
 %useradd -u 235 -d /var/lib/%{name} -g %{name} -c "Majordomo User" %{name}
 
