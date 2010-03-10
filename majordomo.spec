@@ -84,7 +84,7 @@ fi
 
 %files
 %defattr(644,root,root,755)
-%doc Changelog LICENSE NEWLIST NEWS README* Doc
+%doc Changelog INSTALL LICENSE NEWLIST NEWS README* Doc
 %dir %{_datadir}/%{name}
 %{_datadir}/%{name}/Tools
 %{_mandir}/man8/majordomo.8*
