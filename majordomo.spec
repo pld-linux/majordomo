@@ -21,6 +21,8 @@ Patch1:		%{name}-wrapper.patch
 Patch2:		%{name}-install.patch
 Patch3:		%{name}-Makefile.patch
 URL:		http://www.greatcircle.com/majordomo/
+BuildRequires:	perl-base
+BuildRequires:	rpm-perlprov
 Requires:	perl-base >= 1:5.0
 Provides:	group(majordomo)
 BuildRoot:	%{tmpdir}/%{name}-%{version}-root-%(id -u -n)
@@ -33,12 +35,12 @@ virtually all operations can be performed remotely, requiring no
 intervention by the postmaster of the list site.
 
 %description -l pl.UTF-8
-Majordomo jest aplikacją, która automatyzuje zarządzanie
-internetowymi listami dyskusyjnymi. Polecenia mające na celu
-zarządzenie listami są wysyłane do Majordomo poprzez pocztę
-elektroniczną. Od momentu uaktywnienia listy, wszystkie operacje na
-niej się odbywające mogą być wykonywane zdalnie, bez konieczności
-interwencji administratora poczty.
+Majordomo jest aplikacją, która automatyzuje zarządzanie internetowymi
+listami dyskusyjnymi. Polecenia mające na celu zarządzenie listami są
+wysyłane do Majordomo poprzez pocztę elektroniczną. Od momentu
+uaktywnienia listy, wszystkie operacje na niej się odbywające mogą być
+wykonywane zdalnie, bez konieczności interwencji administratora
+poczty.
 
 %prep
 %setup -q
