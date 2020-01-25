@@ -6,7 +6,6 @@
 #	- set $whereami variable to machine's hostname
 #	- fix %postun error
 #
-%include	/usr/lib/rpm/macros.perl
 Summary:	An Internet mailing list manager
 Summary(pl.UTF-8):	Internetowa lista dyskusyjna
 Name:		majordomo
